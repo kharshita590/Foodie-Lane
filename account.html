@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="true">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+        <title>ACCOUNT</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+    <div class="header">
+    <div class="container">
+    <div class="navbar">
+        <div class="logo">
+            <img src="https://dl.dropbox.com/s/dlh1qgr6wwg0sf5/img_20211222_192804.jpg" width="125px">
+        </div>
+        <nav>
+            <ul id="MenuItems">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Product</a></li>
+                <li><a href="product-details.html">About</a></li>
+
+                <li><a href="account.html">Account</a></li>
+            </ul>
+        </nav>
+        <img src="menu.png" class="menu-icon" onclick="menutoggle()">
+
+    </div>
+
+    </div>
+</div>
+
+
+<div class="account-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+                <img src="https://dl.dropbox.com/s/b9indll0rrobogk/68-680695_transparent-cheese-burger-png-burger-logo-transparent-background.png">
+
+            </div>
+            <div class="col-2">
+                <div class="form">
+                    <div class="form-btn">
+                        <span onclick="login()">Login</span>
+                        <span onclick="register()">Register</span>
+                        <hr id="indicator">
+
+              <form id="Loginform">
+                  <input type="text" placeholder="Username">
+                  <input type="password" placeholder="Password">
+                  <button type="submit" class="btn">Login</button>
+                  <a href="">Forgot Password</a>
+              </form>
+
+              <form id="Regform">
+                <input type="text" placeholder="username">
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Password">
+                <button type="submit" class="btn">Register</button>
+            </form>
+            </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <!-------footer--->
+    <div class="footer" style="padding-left: 15px;">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+
+                    <h3>Download our App</h3>
+                    <p>Download our app From Google play store or Apple store.</p>
+                    <img src="https://dl.dropbox.com/s/smywesd8rwxbywk/640px-google_play_store_badge_en.svg.png" class="play-store">
+                    <img src="https://dl.dropbox.com/s/rilbk04k9cwsyu4/downloadappstore.png" class="apple-store">
+
+                </div>
+
+
+
+                <div class="footer-col-4">
+                    <h3>Follow us </h3>
+                    <ul>
+                    <li>Instagram</li>
+                    <li>Facebook</li>
+                    <li>Twitter</li>
+                    <li>G-mail</li>
+                    </ul>
+                </div>
+
+
+                <div class="footer-col-4">
+                    <h3>Useful Links</h3>
+                    <ul>
+                    <li>Discounts</li>
+                    <li>Offer</li>
+                    <li>Jobs</li>
+
+                    </ul>
+                </div>
+
+
+
+            </div>
+            <hr>
+            <p class="copyright">Copyright Harshita kumari</p>
+        </div>
+    </div>
+  <script>
+      var MenuItems= document.getElementById("MenuItems");
+      MenuItems.style.maxHeight= "0px" ;
+      function menutoggle(){
+          if(MenuItems.style.maxHeight == "0px")
+          {
+              MenuItems.style.maxHeight = "200px";
+
+          }
+          else {
+              MenuItems.style.maxHeight = "0px";
+          }
+      }
+  </script>
+ <script>
+     var Loginform = document.getElementById("Loginform");
+     var Regform = document.getElementById("Regform");
+     var indicator = document.getElementById("indicator");
+
+     function register(){
+              Regform.style.transform = "translateX(0px)";
+              Loginform.style.transform = "translateX(0px)";
+              indicator.style.transform = "translateX(100px)";
+
+          }
+
+     function login(){
+              Regform.style.transform = "translateX(300px)";
+              Loginform.style.transform = "translateX(300px)";
+              indicator.style.transform = "translateX(100px)";
+
+          }
+ </script>
+<script type="module">
+
+    // Import the functions you need from the SDKs you need
+
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js";
+
+    // TODO: Add SDKs for Firebase products that you want to use
+
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+
+    // Your web app's Firebase configuration
+
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+    const firebaseConfig = {
+
+      apiKey: "AIzaSyCiaEk28hcsuWmW2g4XGXnxlpZFXLFjQhE",
+
+      authDomain: "foodielane-29.firebaseapp.com",
+
+      projectId: "foodielane-29",
+
+      storageBucket: "foodielane-29.appspot.com",
+
+      messagingSenderId: "430750075177",
+
+      appId: "1:430750075177:web:00c57596f489c48c638f38",
+
+      measurementId: "G-3RJZ23TFNH"
+
+    };
+
+
+    // Initialize Firebase
+
+    const app = initializeApp(firebaseConfig);
+
+    const analytics = getAnalytics(app);
+
+  </script>
+    </body>
+</html>
